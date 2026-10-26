@@ -1,0 +1,101 @@
+### Variáveis
+@base = http://localhost:3000/api
+@adminEmail = admin@helpdesk.dev
+@adminSenha = admin12345
+@token = cole-o-token-do-login-aqui
+
+### Health check (público)
+GET {{base}}/health
+
+### Login do administrador
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{adminEmail}}",
+  "password": "{{adminSenha}}"
+}
+
+### Quem sou eu
+GET {{base}}/me
+Authorization: Bearer {{token}}
+
+### Lista de chamados com filtros e paginação
+GET {{base}}/tickets?status=open&priority=high&page=1&limit=10
+Authorization: Bearer {{token}}
+
+### Detalhe de um chamado
+GET {{base}}/tickets/1
+Authorization: Bearer {{token}}
+
+### Abre um chamado
+POST {{base}}/tickets
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Erro ao abrir o ERP",
+  "description": "A tela de login do ERP retorna erro 500 desde a atualização de hoje.",
+  "priority": "high",
+  "categoryId": 1
+}
+
+### Assume o chamado e inicia o atendimento
+PATCH {{base}}/tickets/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "assigneeId": 2,
+  "status": "in_progress"
+}
+
+### Comentário público
+POST {{base}}/tickets/1/comments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "body": "Estamos verificando a sincronização da conta."
+}
+
+### Nota interna (somente equipe)
+POST {{base}}/tickets/1/comments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "body": "Checklist interno: confirmar o alias correto antes de resetar.",
+  "internal": true
+}
+
+### Painel de indicadores (equipe)
+GET {{base}}/dashboard
+Authorization: Bearer {{token}}
+
+### Categorias
+GET {{base}}/categories
+Authorization: Bearer {{token}}
+
+### Nova categoria (admin)
+POST {{base}}/categories
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Telefonia",
+  "color": "#10b981"
+}
+
+### Equipe (admin vê todos; agente vê apenas a equipe)
+GET {{base}}/users
+Authorization: Bearer {{token}}
+
+### Promove uma conta a agente (admin)
+PATCH {{base}}/users/4/role
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "role": "agent"
+}
