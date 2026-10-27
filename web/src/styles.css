@@ -2004,21 +2004,30 @@ a {
   }
 }
 
+/* Identidade visual e layouts responsivos. */
 
-/* Central de atendimento: navegação lateral e superfícies compactas. */
-:root { --raio: 7px; --raio-sm: 5px; }
-.card { box-shadow: none; }
-.pagina__titulos h1 { font-weight: 600; }
-.tabela th { background: var(--superficie-2); }
-.indicador { border-radius: 5px; box-shadow: none; }
-@media (min-width: 1200px) {
- .app { padding-left: 236px; }
- .topo { position: fixed; inset: 0 auto 0 0; width: 236px; border-right: 1px solid var(--linha); border-bottom: 0; overflow-y: auto; }
- .topo__interno { width: 100%; min-height: 80%; padding: 26px 18px; display: flex; flex-direction: column; align-items: stretch; gap: 32px; }
- .menu { flex-direction: column; align-items: stretch; gap: 6px; }
- .menu__item { justify-content: flex-start; padding: 12px; }
- .sessao { margin-top: auto; flex-wrap: wrap; justify-content: flex-start; }
- .faixa-demo { padding: 14px; flex-direction: column; font-size: 0.75rem; }
- .conteudo { width: calc(100% - 64px); padding-top: 38px; }
- .rodape { width: calc(100% - 64px); }
+:root { --raio:16px; --raio-sm:10px; --acento:#6854c7; --acento-hover:#503cae; }
+.card { box-shadow:0 6px 24px #25204706; }
+.pagina__titulos h1 { font-weight:700; letter-spacing:-.045em; }
+.tabela th { background:var(--superficie-2); padding-block:16px; }
+.indicador { border-radius:14px; box-shadow:none; border-top:3px solid var(--acento); }
+.login__marca { background:#282046; color:#fff; }
+.login__pitch h1 { font-size:clamp(2.2rem,4vw,4rem); letter-spacing:-.055em; line-height:1.08; }
+.login__selo { color:#e2d3ff; }
+.login__lista { display:grid; gap:12px; }
+.login__lista li { padding:16px 18px; border:1px solid #ffffff25; border-radius:14px; background:#ffffff08; }
+.login__cartao { box-shadow:none; border:0; }
+.login__demo button { border-radius:12px; transition:transform .2s,border-color .2s; }
+.login__demo button:hover { transform:translateX(4px); }
+@media(min-width:1200px) {
+ .app { padding-left:248px; }
+ .topo { position:fixed; inset:0 auto 0 0; width:248px; border-right:1px solid var(--linha); border-bottom:0; overflow-y:auto; }
+ .topo__interno { width:100%; min-height:80%; padding:30px 18px; display:flex; flex-direction:column; align-items:stretch; gap:36px; }
+ .menu { flex-direction:column; align-items:stretch; gap:8px; }
+ .menu__item { justify-content:flex-start; padding:13px 14px; border-radius:10px; }
+ .sessao { margin-top:auto; flex-wrap:wrap; justify-content:flex-start; padding-top:24px; border-top:1px solid var(--linha); }
+ .faixa-demo { padding:16px; flex-direction:column; font-size:.75rem; }
+ .conteudo { width:calc(100% - 72px); padding-top:42px; }
+ .rodape { width:calc(100% - 72px); }
 }
+
