@@ -38,9 +38,9 @@ export default function Login({ api, aoEntrar, demo }) {
     setErro(null);
   }
 
-  async function autenticar(credenciais) {
+  async function autenticar(credenciais, modoAutenticacao = modo) {
     const dados = credenciais ?? campos;
-    const problema = validar(modo, dados);
+    const problema = validar(modoAutenticacao, dados);
 
     if (problema) {
       setErro(problema);
@@ -52,7 +52,7 @@ export default function Login({ api, aoEntrar, demo }) {
 
     try {
       const resultado =
-        modo === "entrar"
+        modoAutenticacao === "entrar"
           ? await api.login({ email: dados.email.trim(), password: dados.password })
           : await api.registrar({
               name: dados.name.trim(),
@@ -72,7 +72,7 @@ export default function Login({ api, aoEntrar, demo }) {
     const credenciais = { name: conta.nome, email: conta.email, password: conta.senha };
     setCampos(credenciais);
     setModo("entrar");
-    autenticar(credenciais);
+    autenticar(credenciais, "entrar");
   }
 
   return (
@@ -82,7 +82,7 @@ export default function Login({ api, aoEntrar, demo }) {
 
         <div className="login__pitch">
           <p className="login__selo">Central de atendimento</p>
-          <h1>Chamado, prazo e histórico no mesmo lugar.</h1>
+          <h1>Atendimento organizado. Equipe em sintonia.</h1>
           <p>
             Abertura com SLA automático, fila por prioridade, comentários internos e
             indicadores de atendimento — com permissões diferentes para solicitante,
