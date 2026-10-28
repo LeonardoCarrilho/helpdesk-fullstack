@@ -18,3 +18,10 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+.env
+.env.local
+.env.*.local
+coverage/
+playwright-report/
+test-results/

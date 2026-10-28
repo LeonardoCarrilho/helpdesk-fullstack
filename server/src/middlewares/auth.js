@@ -1,14 +1,16 @@
 import { AppError } from "../utils/errors.js";
 import { verificarToken } from "../utils/jwt.js";
 
-/** Exige `Authorization: Bearer <token>` e carrega o usuário atualizado. */
+/** Aceita cookie HttpOnly ou `Authorization: Bearer <token>` e carrega o usuário atualizado. */
 export function autenticar(repos) {
   return async (req, _res, next) => {
     try {
       const cabecalho = req.headers.authorization ?? "";
-      const [tipo, token] = cabecalho.split(" ");
+      const [tipo, bearer] = cabecalho.split(" ");
+      const cookie = (req.headers.cookie ?? "").split(";").map(value => value.trim()).find(value => value.startsWith("helpdesk_sessao="));
+      const token = tipo === "Bearer" ? bearer : cookie?.slice("helpdesk_sessao=".length);
 
-      if (tipo !== "Bearer" || !token) {
+      if (!token) {
         throw new AppError("Envie o token de acesso no cabeçalho Authorization.", 401);
       }
 

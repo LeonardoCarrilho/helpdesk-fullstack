@@ -19,9 +19,17 @@
     "seed": "npm run seed --workspace server",
     "test": "npm run test --workspace server && npm run test --workspace web",
     "build": "npm run build --workspace web",
-    "build:demo": "npm run build:demo --workspace web"
+    "build:demo": "npm run build:demo --workspace web",
+    "lint": "biome lint .",
+    "test:e2e:security": "playwright test",
+    "test:coverage": "npm run test:coverage --workspace server && npm run test:coverage --workspace web"
   },
   "engines": {
     "node": ">=20.19"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.3",
+    "@playwright/test": "^1.64.1",
+    "c8": "^12.0.0"
   }
 }

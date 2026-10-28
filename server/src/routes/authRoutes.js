@@ -9,7 +9,7 @@ const COOKIE_SESSAO = "helpdesk_sessao";
 function opcoesCookie() {
   return {
     httpOnly: true,
-    sameSite: "lax",
+    sameSite: "strict",
     secure: ehProducao,
     path: "/",
     maxAge: 8 * 60 * 60 * 1000,
@@ -25,9 +25,9 @@ export function criarRotasAuth(authService) {
     asyncHandler(async (req, res) => {
       const resultado = await authService.registrar(req.body);
 
-      // O cookie é opcional: a SPA também guarda o token e envia Bearer.
+      // Em produção somente o cookie HttpOnly transporta a sessão.
       res.cookie(COOKIE_SESSAO, resultado.token, opcoesCookie());
-      res.status(201).json({ data: resultado });
+      res.status(201).json({ data: ehProducao ? { usuario: resultado.usuario } : resultado });
     })
   );
 
@@ -38,7 +38,7 @@ export function criarRotasAuth(authService) {
       const resultado = await authService.login(req.body);
 
       res.cookie(COOKIE_SESSAO, resultado.token, opcoesCookie());
-      res.json({ data: resultado });
+      res.json({ data: ehProducao ? { usuario: resultado.usuario } : resultado });
     })
   );
 
