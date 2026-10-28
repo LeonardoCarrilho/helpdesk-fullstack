@@ -11,7 +11,7 @@ export function criarApp({ repos, clock = () => new Date() }) {
   configureSecurity(app);
 
   app.disable("x-powered-by");
-  
+
 
   const origens = env.corsOrigem === "*" ? true : env.corsOrigem.split(",").map((item) => item.trim());
 

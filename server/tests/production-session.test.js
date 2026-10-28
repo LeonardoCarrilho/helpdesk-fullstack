@@ -15,4 +15,3 @@ test("sessão de produção é HttpOnly e mutações exigem origem", async () =>
  await request(app).get("/api/me").set("X-Forwarded-Proto","https").set("Cookie",cookie.split(";")[0]).expect(200);
  await request(app).post("/api/auth/logout").set("X-Forwarded-Proto","https").set("Cookie",cookie.split(";")[0]).expect(403);
 });
-
