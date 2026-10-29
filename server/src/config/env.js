@@ -56,3 +56,8 @@ export function validarAmbiente() {
 }
 
 export const ehProducao = producao;
+
+if (process.env.NODE_ENV === "production") {
+  if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32 || process.env.JWT_SECRET.startsWith("dev-")) throw new Error("Configure JWT_SECRET forte (mínimo 32 caracteres).");
+  if (!process.env.DB_PASSWORD || ["financas", "helpdesk"].includes(process.env.DB_PASSWORD)) throw new Error("Configure DB_PASSWORD próprio em produção.");
+}

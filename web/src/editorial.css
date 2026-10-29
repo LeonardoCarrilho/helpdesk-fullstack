@@ -1,0 +1,49 @@
+/* Service desk: a terracotta editorial entrance and a precise operational UI. */
+:root { --fundo:#f2f0eb; --superficie:#fffdf8; --superficie-2:#eceae3; --tinta:#303530; --tinta-2:#555f54; --tinta-3:#71786a; --linha:#d3d5c9; --acento:#8c4630; --acento-forte:#6c3221; --acento-suave:#eee0d3; --raio:2px; --raio-sm:2px; --focus-ring:#8c4630; }
+.login { padding:0; gap:0; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); background:#f2f0eb; }
+.login__marca { border-radius:0; background:#8c4630; padding:clamp(32px,5vw,76px); color:#fff4df; }
+.login__marca::after { display:none; }
+.login__marca .marca__texto strong { font-family:Georgia,serif; font-size:1.5rem; font-weight:400; }
+.login__marca .marca__texto small { color:#e8cdb9; }
+.login__selo { color:#e8cdb9; font-family:monospace; font-size:.65rem; }
+.login__pitch h1 { font-family:Georgia,serif; font-size:clamp(2.8rem,4.8vw,4.8rem); font-weight:400; line-height:1.03; letter-spacing:-.055em; max-width:13ch; }
+.login__pitch>p { color:#f0dac4; font-size:.9rem; line-height:1.7; }
+.login__lista { border-color:#be8268; margin-top:30px; }
+.login__lista li { border-color:#be8268; padding:18px 0; }
+.login__lista strong { font-family:monospace; font-weight:400; font-size:.78rem; color:#fff4df; }
+.login__lista span { color:#e8cdb9; }
+.login__rodape { color:#e8cdb9; }
+.login__painel { padding:48px; }
+.login__cartao { border:0; border-radius:0; background:transparent; box-shadow:none; max-width:460px; padding:0; }
+.login__cartao h2 { font-family:Georgia,serif; font-size:2.6rem; font-weight:400; }
+.abas { border:0; border-bottom:1px solid #adb4a5; background:none; padding:0; border-radius:0; gap:0; }
+.aba { border-radius:0; padding:14px; }
+.aba--ativa { background:transparent; box-shadow:none; border-bottom:3px solid var(--acento); color:var(--acento); }
+.campo>span { font-family:monospace; font-size:.73rem; }
+.campo input,.campo select,.campo textarea { border:1px solid var(--linha); border-bottom-color:#adb4a5; background:var(--superficie); border-radius:0; }
+.botao { border-radius:2px; box-shadow:none; font-size:.8rem; }
+.login__demo ul { gap:0; }
+.login__demo ul button { background:none; border:0; border-bottom:1px solid var(--linha); border-radius:0; padding:15px 0; }
+.login__demo ul button:hover { background:var(--acento-suave); transform:none; border-color:var(--linha); }
+.login__demo-nome { font-size:.8rem; }
+.card { border-radius:2px; box-shadow:none; border:1px solid var(--linha); }
+.topo { background:#303a34; color:#e3e7dc; }
+.topo .marca { color:#f4f0e5; }
+.topo .marca__texto small { color:#bbc6b4; }
+.menu__item { border-radius:2px; color:#cbd4c3; }
+.menu__item--ativo { background:#e4e9dc; color:#303a34; }
+.sessao { border-color:#63705c; color:#dbe2d4; }
+.pagina__titulos h1 { font-family:Georgia,serif; font-size:clamp(2.2rem,3.6vw,3.3rem); font-weight:400; letter-spacing:-.045em; }
+.filtros { background:none; border:0; border-block:1px solid var(--linha); border-radius:0; padding:20px 0; box-shadow:none; }
+.filtros__busca { border-radius:0; }
+.tabela-wrap { border:0; border-top:2px solid var(--tinta); border-radius:0; }
+.tabela th { font-family:monospace; font-size:.65rem; letter-spacing:.04em; }
+.tabela td { padding-block:16px; }
+.indicador { border:0; border-top:2px solid var(--tinta); border-radius:0; background:transparent; padding:20px 0; }
+.faixa-demo { background:#e1e5d5; color:#374332; }
+.faixa-demo button { border-color:#7b8b70; color:#374332; border-radius:0; }
+.badge { border-radius:2px; }
+@media(min-width:1200px) { .topo { background:#303a34; } .conteudo { padding-top:32px; } }
+@media(max-width:960px) { .login { padding:0; grid-template-columns:minmax(0,1fr); } .login__marca { padding:24px; border-radius:0; } .login__painel { padding:32px 24px; } .login__cartao { max-width:600px; } .login__pitch h1 { max-width:22ch; font-size:2.8rem; } }
+@media(max-width:480px) { .login__cartao h2 { font-size:2.2rem; } .login__marca { padding:20px; } .login__painel { padding:28px 20px; } .login__demo-nome { flex-wrap:wrap; } .pagina__titulos h1 { font-size:2.5rem; } }
+@media(prefers-color-scheme:dark) { :root { --fundo:#1f2722; --superficie:#27312a; --superficie-2:#303c32; --tinta:#e8eadc; --tinta-2:#c6cfbc; --tinta-3:#a9b79d; --linha:#485642; --acento:#e3aa85; --acento-forte:#f2c9a8; --acento-suave:#463b2c; } .login { background:var(--fundo); } .botao--primario { color:#352619; } .topo { background:#18221b; } .faixa-demo { background:#303f2b; color:#d7e2cb; } .faixa-demo button { color:#d7e2cb; } }
