@@ -881,3 +881,7 @@ body {
 
 /* Keep every navigation destination visible on narrow screens. */
 @media(max-width:1020px){.topo{position:relative}.menu{flex-wrap:wrap;overflow:visible;scrollbar-width:auto}.menu__item{flex:0 0 auto}}
+
+@media (max-width: 640px) {
+  .login__cartao h2 { font-size: 1.5rem; }
+}

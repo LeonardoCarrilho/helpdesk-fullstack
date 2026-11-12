@@ -351,7 +351,8 @@ a {
 }
 
 .conteudo:focus {
-  outline: none;
+  outline: 2px solid var(--acento);
+  outline-offset: -4px;
 }
 
 .rodape {
