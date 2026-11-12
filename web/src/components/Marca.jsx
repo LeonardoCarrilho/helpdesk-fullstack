@@ -3,8 +3,8 @@ export function MarcaIcone({ size = 34 }) {
     <svg viewBox="0 0 64 64" width={size} height={size} aria-hidden="true" focusable="false">
       <defs>
         <linearGradient id="marca-helpdesk" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#6366f1" />
-          <stop offset="1" stopColor="#0ea5e9" />
+          <stop offset="0" stopColor="#176582" />
+          <stop offset="1" stopColor="#176582" />
         </linearGradient>
       </defs>
       <rect width="64" height="64" rx="17" fill="url(#marca-helpdesk)" />

@@ -9,12 +9,12 @@ export class ErroApi extends Error {
   }
 }
 
+// Tokens de desenvolvimento vivem apenas na memória da aba.
+let tokenEmMemoria = null;
+const memoria = { getItem: () => tokenEmMemoria, setItem: (_key, value) => { tokenEmMemoria = value; }, removeItem: () => { tokenEmMemoria = null; } };
 function armazenamentoSeguro() {
-  try {
-    return globalThis.localStorage ?? null;
-  } catch {
-    return null;
-  }
+  try { globalThis.localStorage?.removeItem(CHAVE_TOKEN); } catch { /* storage indisponível */ }
+  return memoria;
 }
 
 export function lerToken(armazenamento = armazenamentoSeguro()) {
@@ -112,7 +112,7 @@ export function criarApiHttp({
   return {
     modo: "http",
 
-    temSessao: () => Boolean(lerToken(armazenamento)),
+    temSessao: () => true, // A validade do cookie é verificada por /me.
 
     async login({ email, password }) {
       const { data } = await requisitar("/auth/login", {
@@ -135,9 +135,13 @@ export function criarApiHttp({
     },
 
     async me() {
-      if (!lerToken(armazenamento)) return null;
-      const { data } = await requisitar("/me");
-      return data;
+      try {
+        const { data } = await requisitar("/me");
+        return data;
+      } catch (error) {
+        if (error.status === 401) return null;
+        throw error;
+      }
     },
 
     async logout() {

@@ -1,0 +1,3 @@
+# Somente fingerprints históricos de placeholders de exemplo revisados; não ignora novos segredos.
+6c6a855f4594dfbadae29f719f7c503dfdd7e7c0:docker-compose.yml:generic-api-key:32
+dd0b6212af6fc04e20d0d95c8255993b761f10cc:server/.env.example:generic-api-key:5

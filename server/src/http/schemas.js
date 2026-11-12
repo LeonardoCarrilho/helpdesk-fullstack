@@ -16,7 +16,7 @@ export const esquemaRegistro = z.object({
     .string({ required_error: "E-mail é obrigatório." })
     .trim()
     .toLowerCase()
-    .email("Informe um e-mail válido."),
+    .email("Informe um e-mail válido.").max(160),
   password: z
     .string({ required_error: "Senha é obrigatória." })
     .min(8, "A senha precisa ter pelo menos 8 caracteres.")
@@ -25,7 +25,7 @@ export const esquemaRegistro = z.object({
 
 export const esquemaLogin = z.object({
   email: z.string().trim().toLowerCase().email("Informe um e-mail válido."),
-  password: z.string().min(1, "Informe a senha."),
+  password: z.string().min(1, "Informe a senha.").max(72),
 });
 
 const corpoChamado = {
