@@ -82,7 +82,7 @@ export default function Login({ api, aoEntrar, demo }) {
 
         <div className="login__pitch">
           <p className="login__selo">Central de atendimento</p>
-          <h1>Atendimento organizado. Equipe em sintonia.</h1>
+          <h1>Chamados e prioridades da equipe.</h1>
           <p>
             Abertura com SLA automático, fila por prioridade, comentários internos e
             indicadores de atendimento — com permissões diferentes para solicitante,
@@ -105,7 +105,7 @@ export default function Login({ api, aoEntrar, demo }) {
           </ul>
         </div>
 
-        <p className="login__rodape">React · Node/Express · MySQL · JWT</p>
+        <p className="login__rodape">Central de chamados e acompanhamento de SLA</p>
       </aside>
 
       <main className="login__painel">
@@ -198,7 +198,7 @@ export default function Login({ api, aoEntrar, demo }) {
             <section className="login__demo" aria-labelledby="titulo-contas-demo">
               <h3 id="titulo-contas-demo">Contas de demonstração</h3>
               <p>
-                Este build roda sem servidor. Clique em uma conta para entrar e testar
+                Escolha uma conta para conhecer a central e testar
                 as permissões de cada perfil.
               </p>
 

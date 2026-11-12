@@ -1,11 +1,11 @@
 # Direção visual
 
-Central operacional: navegação compacta, filas legíveis, contraste entre tela de entrada editorial e área de trabalho.
+Central de atendimento em azul e cinza, com navegação compacta e filas legíveis. A entrada apresenta o produto; as telas autenticadas dão prioridade aos chamados, responsáveis e prazos.
 
-A direção escolhida é autoral e editorial: tipografia marcante, composições assimétricas e identidade própria para este projeto. Preserve a relação entre o conteúdo e sua apresentação ao criar novas telas.
+A rodada de novembro usa superfícies claras, bordas discretas, raios de 5 e 8 px e tipografia local. A cor identifica ações e a seleção atual. Status mantêm suas cores sem depender delas para comunicar o significado. O tema escuro acompanha a preferência do sistema.
 
-A camada editorial.css complementa os estilos funcionais e é carregada por último. Use as cores, espaçamentos e tipos definidos nela; evite introduzir estilos de outro projeto sem uma razão de uso.
+`web/src/editorial.css` concentra a apresentação e é carregado depois dos estilos funcionais. Os componentes existentes continuam responsáveis pelos formulários, validação, permissões e estados de carregamento. Preserve controles de pelo menos 44 px, foco visível e a versão em cartões das tabelas no celular.
 
-Antes de enviar mudanças visuais, confira desktop e celular com capturas reais, incluindo as seções abaixo da primeira dobra. Valide larguras de 320, 390, 768 e 1440 px, foco visível, teclado, contraste, formulários e preferência por movimento reduzido. Preserve o tema escuro quando disponível.
+Verifique login, cadastro, lista, novo chamado, detalhe e edição, painel, equipe, categorias e edição nas larguras de 320, 390, 768 e 1440 px. Confira o tema escuro, movimento reduzido e estados vazios e de erro. Os testes do demo não substituem a validação da API com MySQL.
 
-Mudanças visuais seguem o mesmo fluxo: issue, branch, testes, commit e PR com referência à issue. Deploy depende dos checks e da integração do PR.
+Mudanças seguem issue, branch e PR. Deploy depende dos checks e da integração do PR. A rodada atual referencia a issue #6.

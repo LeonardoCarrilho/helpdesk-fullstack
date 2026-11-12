@@ -25,3 +25,6 @@ Thumbs.db
 coverage/
 playwright-report/
 test-results/
+
+# Local design checks and browser profiles
+.taste-skill/
