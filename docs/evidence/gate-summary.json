@@ -1,0 +1,308 @@
+{
+  "status": "open",
+  "round": 3,
+  "max": 3,
+  "open": [
+    {
+      "check": "hero-fill",
+      "where": "div.login > main.login__painel > div.login__cartao > section.login__demo \"Contas de demonstração\"",
+      "msg": "the next section shows on the first screen: it starts at 487px on a 900px screen (the hero ends at 436px)",
+      "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "hero-fill"
+      ],
+      "wheres": [
+        "div.login > main.login__painel > div.login__cartao > section.login__demo \"Contas de demonstração\""
+      ]
+    },
+    {
+      "check": "flush",
+      "where": "main.login__painel > div.login__cartao > form.formulario > button.botao.botao--primario \"Entrar\"",
+      "msg": "its button sits 0px above the lower edge of form.formulario, where the ground changes to section.login__demo",
+      "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "flush"
+      ],
+      "wheres": [
+        "main.login__painel > div.login__cartao > form.formulario > button.botao.botao--primario \"Entrar\""
+      ]
+    },
+    {
+      "check": "copy-headline",
+      "where": "div.login > aside.login__marca > div.login__pitch > h1 \"Chamados e prioridades da equipe.\"",
+      "msg": "\"Chamados e prioridades da equipe.\" does not name what is sold (central de atendimento, central, atendimento, from flags); only the line under it does",
+      "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "copy-headline"
+      ],
+      "wheres": [
+        "div.login > aside.login__marca > div.login__pitch > h1 \"Chamados e prioridades da equipe.\""
+      ]
+    },
+    {
+      "check": "hero-screen",
+      "where": "div#root > div.login > main.login__painel > div.login__cartao \"Entrar na centralUse sua conta para abri\"",
+      "msg": "the hero ends at 879px on a 900px screen, 21px above the fold: it ends at the fold, 1px either way (SR-1)",
+      "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "hero-screen"
+      ],
+      "wheres": [
+        "div#root > div.login > main.login__painel > div.login__cartao \"Entrar na centralUse sua conta para abri\""
+      ]
+    },
+    {
+      "check": "section-height",
+      "where": "div#root > div.login > main.login__painel > div.login__cartao \"Entrar na centralUse sua conta para abri\"",
+      "msg": "the section starts at 63px, 63px below the screen grid (0 x 900px): sections start on whole screens (SR-2)",
+      "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "section-height"
+      ],
+      "wheres": [
+        "div#root > div.login > main.login__painel > div.login__cartao \"Entrar na centralUse sua conta para abri\""
+      ]
+    },
+    {
+      "check": "one-section",
+      "where": "div#root > div.login > main.login__painel > div.login__cartao \"Entrar na centralUse sua conta para abri\"",
+      "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+      "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "one-section"
+      ],
+      "wheres": [
+        "div#root > div.login > main.login__painel > div.login__cartao \"Entrar na centralUse sua conta para abri\""
+      ]
+    },
+    {
+      "check": "one-section",
+      "where": "div.login > main.login__painel > div.login__cartao > div.abas \"EntrarCriar conta\"",
+      "msg": "a band: a box 100% of the section wide on a ground of its own that holds only text: the section's own ground is the band (SR-4)",
+      "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "one-section"
+      ],
+      "wheres": [
+        "div.login > main.login__painel > div.login__cartao > div.abas \"EntrarCriar conta\""
+      ]
+    },
+    {
+      "check": "one-section",
+      "where": "section.login__demo > ul > li:nth-of-type(1) > button \"Leonardo CarrilhoAdministradoradmin@help\"",
+      "msg": "a band: a box 100% of the section wide on a ground of its own that holds only text: the section's own ground is the band (and 2 more like it: \"Ana SouzaAgenteana@helpd\", \"Carla MendesSolicitantec\") (SR-4)",
+      "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "one-section"
+      ],
+      "wheres": [
+        "section.login__demo > ul > li:nth-of-type(1) > button \"Leonardo CarrilhoAdministradoradmin@help\""
+      ]
+    },
+    {
+      "check": "one-heading",
+      "where": "div.login > main.login__painel > div.login__cartao > h2 \"Entrar na central\"",
+      "msg": "the hero holds an h2 (1): its heading is the h1, and an h2 opens the next section (SR-5)",
+      "fix": "give each section one h2, first in its .wrap, and the hero only its h1",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "one-heading"
+      ],
+      "wheres": [
+        "div.login > main.login__painel > div.login__cartao > h2 \"Entrar na central\""
+      ]
+    },
+    {
+      "check": "container-edges",
+      "where": "div#root \"Helpdesksuporte sem ruídoCentral de aten\"",
+      "msg": "a <div> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+      "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "container-edges"
+      ],
+      "wheres": [
+        "div#root \"Helpdesksuporte sem ruídoCentral de aten\""
+      ]
+    },
+    {
+      "check": "container-edges",
+      "where": "div#root > div.login > main.login__painel > div.login__cartao \"Entrar na centralUse sua conta para abri\"",
+      "msg": "the section needs exactly one in-flow child .wrap (it has 5 in-flow children, 0 .wrap) (SR-6)",
+      "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "container-edges"
+      ],
+      "wheres": [
+        "div#root > div.login > main.login__painel > div.login__cartao \"Entrar na centralUse sua conta para abri\""
+      ]
+    },
+    {
+      "check": "container-edges",
+      "where": "div.login > main.login__painel > div.login__cartao > h2 \"Entrar na central\"",
+      "msg": "6 text blocks start on a left line at x 851, 851px from the container's left: text starts on the container's left, or on one split line (x 610, 732, 854) (also \"Use sua conta para abrir e acomp\", \"E-mail\", \"E-mail\") (SR-6)",
+      "fix": "start the text on the container's left, or on the one split line every split shares",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "container-edges"
+      ],
+      "wheres": [
+        "div.login > main.login__painel > div.login__cartao > h2 \"Entrar na central\""
+      ]
+    },
+    {
+      "check": "text-only",
+      "where": "div.login > main.login__painel > div.login__cartao > section.login__demo \"Contas de demonstração\"",
+      "msg": "the closing section is only text: no picture, icon, mock or effect in it",
+      "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground",
+      "widths": [
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "text-only"
+      ],
+      "wheres": [
+        "div.login > main.login__painel > div.login__cartao > section.login__demo \"Contas de demonstração\""
+      ]
+    }
+  ],
+  "waived": [
+    {
+      "check": "card-visual",
+      "where": "main.login__painel > div.login__cartao > section.login__demo > ul \"Leonardo Carrilho Administrador admin@he\"",
+      "msg": "3 cards hold only text: no picture, icon, UI fragment or effect in any of them",
+      "fix": "give the cards a visual: an inset panel with a UI fragment, a photograph or real icons",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "card-visual"
+      ],
+      "wheres": [
+        "main.login__painel > div.login__cartao > section.login__demo > ul \"Leonardo Carrilho Administrador admin@he\""
+      ],
+      "reason": "These are real demonstration-account selection buttons with role labels, not marketing cards requiring photography or decoration."
+    },
+    {
+      "check": "cta",
+      "where": "div.login > main.login__painel > div.login__cartao > section.login__demo \"Contas de demonstração\"",
+      "msg": "the last section before the footer ends with no button",
+      "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "consistency",
+      "ids": [
+        "cta"
+      ],
+      "wheres": [
+        "div.login > main.login__painel > div.login__cartao > section.login__demo \"Contas de demonstração\""
+      ],
+      "reason": "This section already contains the three functional demonstration-account buttons. It is not a marketing closing CTA."
+    },
+    {
+      "check": "links",
+      "where": "div#root > div.login > aside.login__marca > a.marca \"Helpdesk SUPORTE SEM RUÍDO\"",
+      "msg": "\"Helpdesk SUPORTE SEM RUÍDO\" goes to #/chamados, which is not on this page",
+      "fix": "point every link at a real section, page or file",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "links"
+      ],
+      "wheres": [
+        "div#root > div.login > aside.login__marca > a.marca \"Helpdesk SUPORTE SEM RUÍDO\""
+      ],
+      "reason": "The existing hash router resolves #/chamados to the ticket list; Playwright exercises this route. It is not a missing in-page anchor."
+    },
+    {
+      "check": "moment-none",
+      "where": "(the page)",
+      "msg": "a software page (--type) deals no moment: every kind carries one, two on a long page (moments.md)",
+      "fix": "deal one (moments.mjs pick --page software) and mount it in its own section",
+      "widths": [
+        1440
+      ],
+      "from": "consistency",
+      "ids": [
+        "moment-none"
+      ],
+      "wheres": [
+        "(the page)"
+      ],
+      "reason": "This is the sign-in screen of a recurring operational application; a scroll-driven marketing moment would interrupt account access."
+    },
+    {
+      "check": "container",
+      "where": "page",
+      "msg": "no .wrap",
+      "fix": "put the content in one .wrap",
+      "widths": [
+        1440,
+        390
+      ],
+      "from": "layout",
+      "ids": [
+        "container"
+      ],
+      "wheres": [
+        "page"
+      ],
+      "reason": "The existing React app uses its login grid and shared operational content layout; the marketing kit wrap class is not required for its alignment."
+    }
+  ],
+  "warnCount": 7
+}
